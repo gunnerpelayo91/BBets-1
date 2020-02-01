@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo=TRUE)
 ```
 
 
-
+Test if push worked
 
 
 <!-- We recommend you use git branches -- create a separate branch for each major section i.e. Introduction, Methods, Results, Inferential Results, and Discussion and Conclusions - leave the YAML block untouched until the final merge where you put in your own name !-->
@@ -38,9 +38,10 @@ if (length(unique(classSample))==35){
 
 
 ```{r}
+days=1:365
 bank=0
 students=35
-repeatn= 1000
+repeatn= 100
 winnings=numeric()
 for ( j in 1:repeatn)
   {classSample = sample(days,students,replace=TRUE)
@@ -50,7 +51,9 @@ for ( j in 1:repeatn)
   winnings[j]=bank
   }
 hist(winnings,xlab="Winnings ($)")
-print(paste( 'Average Winnings =',mean(winnings)))
+
+print(paste( 'Winnings =',winnings[repeatn]))
+plot(winnings,type = 'l',col="red",xlab="Times Played",ylab="Winnings ($)")
 ```
 
 
